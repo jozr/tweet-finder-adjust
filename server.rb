@@ -11,12 +11,12 @@ get "/search" do
   query = params[:query]
 
   if query_present?(query)
-  	@tweets = client.search("#{query}", result_type: "recent").take(10)
-  	@info_message = "No matching tweets were found." if @tweets.empty?
-  	erb :index
+    @tweets = client.search("#{query}", result_type: "recent").take(10)
+    @info_message = "No matching tweets were found." if @tweets.empty?
+    erb :index
   else
-  	@info_message = "Enter some text to search tweets."
-  	erb :index
+    @info_message = "Enter some text to search tweets."
+    erb :index
   end
 end
 
