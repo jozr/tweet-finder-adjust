@@ -15,5 +15,6 @@ bundle exec rspec
 
 To run the server:
 ```bash
+bundle install
 ruby server.rb
 ```
