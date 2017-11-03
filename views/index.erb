@@ -2,11 +2,15 @@
 <header>
   <title>Tweet Finder</title>
 </header>
+<head>
+  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+</head>
 <body>
-<h2>Tweet Finder</h2>
+<h2 class="title">Tweet Finder</h2>
 
-<form action="/search" method="get">
-  <input type="text" name="query"/><input type="submit" value="Search"/>
+<form class="search-form" action="/search" method="get">
+  <input type="text" name="query" maxlength="140" /><br>
+  <input type="submit" value="Search" />
 </form>
 
 <% if @info_message %>
