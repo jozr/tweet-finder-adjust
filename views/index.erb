@@ -1,0 +1,22 @@
+<html>
+<header>
+  <title>Tweet Finder</title>
+</header>
+<body>
+<h2>Tweet Finder</h2>
+
+<form action="/search" method="get">
+  <input type="text" name="query"/><input type="submit" value="Search"/>
+</form>
+
+<% if @info_message %>
+  <p><%= @info_message %><p>
+<% end %>
+
+<% if @tweets %>
+  <% @tweets.each do |tweet| %>
+    <p><strong>@<%= tweet.user.screen_name %></strong>: <%= tweet.full_text %><p>
+  <% end %>
+<% end %>
+</body>
+</html>
